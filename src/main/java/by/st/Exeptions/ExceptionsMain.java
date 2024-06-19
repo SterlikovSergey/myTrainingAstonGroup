@@ -7,68 +7,64 @@ public class ExceptionsMain {
         // Пример 1: NullPointerException
         try {
             String str = null;
-            if (str == null) {
-                throw new MyExceptions("Null reference");
-            }
             str.length();
-        } catch (MyExceptions e) {
-            System.out.println("Caught MyExceptions: " + e);
+        } catch (NullPointerException e) {
+            System.out.println("Caught 1 - NullPointerException: " + e.getMessage());
         }
 
         // Пример 2: ArrayIndexOutOfBoundsException
         try {
             int[] array = new int[5];
-            if (array.length <= 10) {
-                throw new MyExceptions("Array index out of bounds");
-            }
             int number = array[10];
-        } catch (MyExceptions e) {
-            System.out.println("Caught MyExceptions: " + e);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Caught 2 - ArrayIndexOutOfBoundsException: " + e);
         }
 
         // Пример 3: ArithmeticException
         try {
-            if (true) { // Условие всегда истинно для демонстрации
-                throw new MyExceptions("Arithmetic exception on division by zero");
-            }
             int result = 10 / 0;
-        } catch (MyExceptions e) {
-            System.out.println("Caught MyExceptions: " + e);
+        } catch (ArithmeticException e) {
+            System.out.println("Caught 3 - ArithmeticException: " + e);
         }
 
         // Пример 4: ClassCastException
-        try {
+        /*try {
             Object x = new Integer(0);
-            if (x instanceof String) {
+
                 System.out.println((String)x);
-            } else {
-                throw new MyExceptions("Class cast exception");
-            }
-        } catch (MyExceptions e) {
-            System.out.println("Caught MyExceptions: " + e);
-        }
+
+            } catch (Exception e) {
+                System.out.println("Caught - Exception: " + e);
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("Caught - ArrayIndexOutOfBoundsException: " + e);
+            } catch (ArithmeticException e) {
+                System.out.println("Caught - ArithmeticException: " + e);
+            } catch (ClassCastException e) {
+                System.out.println("Caught - ClassCastException: " + e);
+            } catch (IllegalArgumentException e) {
+                System.out.println("Caught - IllegalArgumentException: " + e);
+            } catch (NoSuchElementException e) {
+                System.out.println("Caught - NoSuchElementException: " + e);
+            } catch (NullPointerException e) {
+                System.out.println("Caught - NullPointerException: " + e);
+            }*/
 
         // Пример 5: IllegalArgumentException
         try {
             Thread thread = new Thread();
-            if (thread.getPriority() < 1 || thread.getPriority() > 10) {
-                throw new MyExceptions("Illegal argument exception on thread priority");
-            }
+
             thread.setPriority(11); // Этот код не будет выполнен, так как исключение уже выброшено
         } catch (IllegalArgumentException e) {
-            System.out.println("Caught MyExceptions: " + e);
+            System.out.println("Caught 5 - IllegalArgumentException: " + e);
         }
 
         // Пример 6: NoSuchElementException
         try{
             List<String> list = new ArrayList<>();
             Iterator<String> iterator = list.iterator();
-            if (!iterator.hasNext()) {
-                throw new MyExceptions("No such element exception");
-            }
             iterator.next();
-        }catch (MyExceptions e){
-            System.out.println("Caught MyExceptions: " + e);
+        }catch (NoSuchElementException e){
+            System.out.println("Caught 6 - NoSuchElementException: " + e);
         }
     }
 }
