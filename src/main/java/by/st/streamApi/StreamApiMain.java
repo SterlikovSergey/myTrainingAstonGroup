@@ -14,6 +14,18 @@ import java.util.stream.Stream;
 public class StreamApiMain {
     public static void main(String[] args) {
 
+        System.out.println(
+                Stream.of(4, 2, 5)
+                        .filter(i -> i % 2 == 0)
+                        .peek(System.out::println)
+                        .filter(i -> 1 == 1)
+                        .peek(System.out::println)
+                        .sorted()
+                        .toList().stream()
+                        .peek(System.out::println)
+                        .count()
+        );
+
         getMyStrings().stream()
                 .filter(s -> s.startsWith("s"))
                 .filter(s -> s.endsWith("4"))
