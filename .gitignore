@@ -36,3 +36,6 @@ build/
 
 ### Mac OS ###
 .DS_Store.codiumai
+git-flow-plus.config
+.idea
+.codiumai
