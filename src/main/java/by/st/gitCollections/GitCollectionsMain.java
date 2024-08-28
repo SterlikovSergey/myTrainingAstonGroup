@@ -8,6 +8,10 @@ import java.util.Stack;
 public class GitCollectionsMain {
     public static void main(String[] args) {
 
+        System.out.println("MyArrayList");
+        System.out.println("MyLinkedList");
+
+
         MyArrayList<Integer> list = new MyArrayList<>();
         list.add(1);
         list.add(2);
