@@ -7,6 +7,7 @@ import java.util.Stack;
 
 public class GitCollectionsMain {
     public static void main(String[] args) {
+        System.out.println("MyArrayList");
 
         System.out.println("MyArrayList");
         System.out.println("MyLinkedList");
